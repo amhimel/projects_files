@@ -1,4 +1,4 @@
-# Expense Tracker — Flutter App
+# Kotha AI — Flutter App
 
 [![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white)](https://flutter.dev)
 [![Dart](https://img.shields.io/badge/Dart-3.x-0175C2?logo=dart&logoColor=white)](https://dart.dev)
@@ -8,43 +8,43 @@
 [![Platforms](https://img.shields.io/badge/Platforms-Android%20%7C%20iOS-lightgrey)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-A simple and elegant mobile application built with Flutter to track daily income, expenses, and visualize spending through charts.
-Users can sign up, log in, manage their profile, add entries, and monitor financial activity effortlessly.
+Kotha AI is a voice-enabled smart assistant built with Flutter.
+Users can speak naturally, and the app responds with contextual information such as weather, answers, and general assistance.
+It features speech-to-text, text-to-speech, real-time weather data, and smooth animated UI screens.
 
 ---
 
 ## 🚀 Features
-🔐 Authentication
 
-- Email & Password Sign Up
-- Login System
-- Secure password fields
-- Profile completion (Name, Phone Number)
+🎤 Voice Interaction
 
-💰 Finance Management
+- Speech-to-Text for capturing user queries
+- Text-to-Speech for AI replies
+- Smooth mic button animation
+- Live listening preview
 
-- Add Income
-- Add Expenses with category
-- Automatically calculates Total Balance
-- Shows Income and Expenses separately
-- Displays expense history by date
+🌦️ Weather Assistant
 
-📊 Data Visualization
+- Detects real-time weather
+- Shows city, condition, humidity, and wind
+- Auto location fetching (with permission prompt)
 
-- Bar Chart view of expense categories
-- Line chart visualization for daily spending
+📱 Modern UI
 
-🔔 Notifications
+- Gradient backgrounds
+- Neumorphic card design
+- Minimal microphone interface
+- Animated responses
 
-- Optional local notification reminder button (based on UI screenshot)
+🛰️ Location Services
+- Precise or approximate location selection
+- Integrated Android/iOS permission handling
 
-🎨 Modern UI
+🧠 AI Interaction
+- Smart greeting
+- Conversational replies
 
-- Beautiful splash screen
-- Clean light & dark style color usage
-- Rounded dialogs
-
-Smooth user navigation
+Event-based navigation (listening → processing → result)
 ---
 
 ## 📸 Screenshots
@@ -53,9 +53,7 @@ Smooth user navigation
 
 <img src="./screenshots/1.jpeg" width="260"  alt=""/> <img src="./screenshots/2.jpeg" width="260" /> <img src="./screenshots/3.jpeg" width="260" />
 
-<img src="./screenshots/4.jpeg" width="260" /> <img src="./screenshots/5.jpeg" width="260" /> <img src="./screenshots/6.jpeg" width="260" />
-
-<img src="./screenshots/7.jpeg" width="260" />
+<img src="./screenshots/4.jpeg" width="260" />
 
 ---
 
@@ -64,25 +62,23 @@ Smooth user navigation
 
 
 ## 📝 How It Works
-1️⃣ User Registration
+1️⃣ Voice Capture
+- User taps mic → STT starts → spoken words convert to text.
 
-- User creates an account → logs in → completes profile.
+2️⃣ AI Processing
+- Text is sent to logic/AI handler → generates a response.
 
-2️⃣ Add Income
+3️⃣ Weather Handling
+- If query involves weather:
+- Location permission appears
+- App fetches lat/lon
+- Weather API returns temperature, humidity, wind, etc.
 
-- User enters income amount → saved → total balance increases.
+4️⃣ Display Response
+- Neumorphic card updates with weather or conversational text.
 
-3️⃣ Add Expense
-
-- User selects a category → enters amount → saved → total balance decreases.
-
-4️⃣ View History
-
-- Expenses appear grouped by date.
-
-5️⃣ Charts
-
-- Expenses visualized by category and by day.
+5️⃣ Voice Output
+- TTS speaks the result back.
 
 ---
 
@@ -92,8 +88,8 @@ Smooth user navigation
 
 ```bash
 # 1) Clone
-git clone https://github.com/amhimel/expense-tracker.git
-cd expense-tracker
+git clone https://github.com/amhimel/kotha-ai
+cd kotha-ai
 ...
 
 # 2) Install packages
@@ -113,12 +109,11 @@ flutter run
 
 ```
 lib/
- ├── Chart/          
+ ├── core/          
  ├── Model/            
- ├── Provider/           
- ├── Screen/        
- ├── services/        
- ├── Widget/     
+ ├── Ui/           
+ ├── Widgets/        
+ ├── services/          
  ├── app.dart        
  └── main.dart       
 
@@ -147,4 +142,4 @@ If you spot UI/UX tweaks, accessibility fixes, or performance improvements, plea
 
 ## 📝 License
 
-MIT © 2025-12-04 — Expense Tracker Contributors
+MIT © 2025-12-04 — Kotha AI Contributors

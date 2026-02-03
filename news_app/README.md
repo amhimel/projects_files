@@ -1,4 +1,4 @@
-# Expense Tracker — Flutter App
+# News App — Flutter App
 
 [![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white)](https://flutter.dev)
 [![Dart](https://img.shields.io/badge/Dart-3.x-0175C2?logo=dart&logoColor=white)](https://dart.dev)
@@ -8,133 +8,139 @@
 [![Platforms](https://img.shields.io/badge/Platforms-Android%20%7C%20iOS-lightgrey)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-A simple and elegant mobile application built with Flutter to track daily income, expenses, and visualize spending through charts.
-Users can sign up, log in, manage their profile, add entries, and monitor financial activity effortlessly.
+A modern Flutter-based News Application with a clean **dark UI**, **trending news slider,** category-based search, and detailed news reading experience.
+This project focuses on clean UI design, **API integration,** and scalable Flutter architecture.
 
 ---
 
-## 🚀 Features
-🔐 Authentication
+## ✨ Features
 
-- Email & Password Sign Up
-- Login System
-- Secure password fields
-- Profile completion (Name, Phone Number)
+- 🚀 Splash Screen with App Branding
 
-💰 Finance Management
+- 🔥 Trending / Hottest News Carousel
 
-- Add Income
-- Add Expenses with category
-- Automatically calculates Total Balance
-- Shows Income and Expenses separately
-- Displays expense history by date
+- 🧠 Personalized “News For You” Section
 
-📊 Data Visualization
+- 🔍 Search News by Keyword (e.g. Tech, Business, Politics)
 
-- Bar Chart view of expense categories
-- Line chart visualization for daily spending
+- 📰 News Details Page with Image, Title, Author & Date
 
-🔔 Notifications
+- 🌙 Dark Theme UI
 
-- Optional local notification reminder button (based on UI screenshot)
+- 📱 Bottom Navigation Bar
 
-🎨 Modern UI
+- ⚡ Smooth Navigation using GetX
 
-- Beautiful splash screen
-- Clean light & dark style color usage
-- Rounded dialogs
+- 📦 Clean & Scalable Project Structure
 
-Smooth user navigation
 ---
 
 ## 📸 Screenshots
 
 > Place the `screenshots/` folder in your repo root so these links work on GitHub.
 
-<img src="./screenshots/1.jpeg" width="260"  alt=""/> <img src="./screenshots/2.jpeg" width="260" /> <img src="./screenshots/3.jpeg" width="260" />
+<p align="center">
+  <img src="Assets/files/screenshots/main.jpg" style="width:100%; max-width:100%;" alt="News App Main Screen"/>
+</p>
 
-<img src="./screenshots/4.jpeg" width="260" /> <img src="./screenshots/5.jpeg" width="260" /> <img src="./screenshots/6.jpeg" width="260" />
+<img src="Assets/files/screenshots/1.jpeg" width="260"  alt=""/> <img src="Assets/files/screenshots/2.jpeg" width="260" /> <img src="Assets/files/screenshots/3.jpeg" width="260" />
 
-<img src="./screenshots/7.jpeg" width="260" />
+<img src="Assets/files/screenshots/4.jpeg" width="260" /> <img src="Assets/files/screenshots/5.jpeg" width="260" /> <img src="Assets/files/screenshots/6.jpeg" width="260" />
 
 ---
 
 ## 🎥 Demo
-<p><img src="./screenshots/demo.gif" width="420" alt="Quiz Academy demo GIF"/></p>
 
+<p><img src="Assets/files/screenshots/demo.gif" width="420" alt="News App demo GIF"/></p>
 
-## 📝 How It Works
-1️⃣ User Registration
+## 🧱 Tech Stack
 
-- User creates an account → logs in → completes profile.
+📌 Frontend
 
-2️⃣ Add Income
+- Flutter (Material 3)
+- Dart
+- Getx / MVVM pattern
 
-- User enters income amount → saved → total balance increases.
+📌 Third-Party APIs
 
-3️⃣ Add Expense
-
-- User selects a category → enters amount → saved → total balance decreases.
-
-4️⃣ View History
-
-- Expenses appear grouped by date.
-
-5️⃣ Charts
-
-- Expenses visualized by category and by day.
+- News API (news data)
+- HTTP Package – API requests
+- REST API – News data source
 
 ---
 
 ## 🚀 Getting Started
 
+### 🔑 API Configuration
+
+- Flutter **3.x** and Dart **3.x**
+- Create an account on a News API provider
+- Get your API key
+- Add the key inside your config file:
+- Like this const String apiKey = "YOUR_API_KEY_HERE";
+
+### Prerequisites
+
+- Flutter SDK installed
+
+- Android Studio / VS Code
+
+- Emulator or Physical Device
+
 ### Setup
 
 ```bash
 # 1) Clone
-git clone https://github.com/amhimel/expense-tracker.git
-cd expense-tracker
-...
+git clone https://github.com/amhimel/news-app.git
+cd <your-repo>
 
 # 2) Install packages
 flutter pub get
-flutter run
 ```
 
 ### Run
+
 ```bash
 flutter run
 ```
 
 ---
-
 
 ## 📁 Suggested Folder Structure
 
 ```
 lib/
- ├── Chart/          
- ├── Model/            
- ├── Provider/           
- ├── Screen/        
- ├── services/        
- ├── Widget/     
- ├── app.dart        
- └── main.dart       
+│
+├── components/        # Reusable UI components
+├── config/            # API configuration & constants
+├── controller/        # GetX controllers (state management)
+├── models/            # Data models (NewsModel, etc.)
+├── pages/             # App screens (Home, Search, Details)
+├── widgets/           # Custom widgets
+│
+├── main.dart          # App entry point
+
 
 
 ```
 
 ---
 
-## 🗺️ Roadmap
+### 📌 Current Limitations
 
-- User profiles
-- Multi-language support
-- Watchlist & history
-- Push notifications
-- Full trailer playback
+- No offline caching yet
 
+- No authentication system
+
+- No push notifications
+
+## 🚧 Future Improvements
+
+- 🔔 Push Notifications
+- 💾 Offline News Caching
+- 🧑‍💻 User Profile & Preferences
+- 🌍 Category-based News Tabs
+- 📊 Better Error Handling & Empty States
 
 ---
 
@@ -147,4 +153,4 @@ If you spot UI/UX tweaks, accessibility fixes, or performance improvements, plea
 
 ## 📝 License
 
-MIT © 2025-12-04 — Expense Tracker Contributors
+MIT © 2025-12-21 — News App Contributors

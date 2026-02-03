@@ -1,4 +1,4 @@
-# Expense Tracker — Flutter App
+# Fridge Radar — Flutter App
 
 [![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white)](https://flutter.dev)
 [![Dart](https://img.shields.io/badge/Dart-3.x-0175C2?logo=dart&logoColor=white)](https://dart.dev)
@@ -8,54 +8,64 @@
 [![Platforms](https://img.shields.io/badge/Platforms-Android%20%7C%20iOS-lightgrey)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-A simple and elegant mobile application built with Flutter to track daily income, expenses, and visualize spending through charts.
-Users can sign up, log in, manage their profile, add entries, and monitor financial activity effortlessly.
-
+A modern movie-exploration app featuring **trending movies**, **search**, **favorites**, **detailed pages**, and Stripe-powered ticket booking. Movie Verse delivers a visually immersive UI, smooth animations, and a complete end-to-end user experience built with Flutter + **Supabase** + **TMDB API** + **Stripe.**
 ---
 
-## 🚀 Features
-🔐 Authentication
+## ✨ Highlights
 
-- Email & Password Sign Up
-- Login System
-- Secure password fields
-- Profile completion (Name, Phone Number)
+🎞 Browse Movies
 
-💰 Finance Management
+- Trending movies
+- Recommended movies
+- Categories and genres
+- Movie posters, ratings, release dates
+- Smooth scrolling UI
 
-- Add Income
-- Add Expenses with category
-- Automatically calculates Total Balance
-- Shows Income and Expenses separately
-- Displays expense history by date
+❤️ Favorites
 
-📊 Data Visualization
+- Add/remove movies
+- Persistent storage
+- Favorites list with icons & badges
 
-- Bar Chart view of expense categories
-- Line chart visualization for daily spending
+🔍 Search
 
-🔔 Notifications
+- Live movie search
+- Instant keyword filtering
+- “No results found” fallback UI
 
-- Optional local notification reminder button (based on UI screenshot)
+🎬 Movie Details
 
-🎨 Modern UI
+- High-quality banner
+- Genre tags
+- Rating, release date
+- Overview & storyline
+- Add to favorites
+- Watch trailer button
 
-- Beautiful splash screen
-- Clean light & dark style color usage
-- Rounded dialogs
+🎟 Ticket Booking (Stripe)
 
-Smooth user navigation
+- Movie ticket summary
+- Service fee calculation
+- Stripe checkout (test mode)
+- Payment confirmation screen
+
+🌓 Clean, Dark UI Design
+
+- Custom color palette
+- Minimalistic layout
+- Elevated cards & rounded visuals
+
 ---
 
 ## 📸 Screenshots
 
 > Place the `screenshots/` folder in your repo root so these links work on GitHub.
 
-<img src="./screenshots/1.jpeg" width="260"  alt=""/> <img src="./screenshots/2.jpeg" width="260" /> <img src="./screenshots/3.jpeg" width="260" />
+<img src="./screenshots/1.jpg" width="260"  alt=""/> <img src="./screenshots/2.jpg" width="260" /> <img src="./screenshots/3.jpg" width="260" />
 
-<img src="./screenshots/4.jpeg" width="260" /> <img src="./screenshots/5.jpeg" width="260" /> <img src="./screenshots/6.jpeg" width="260" />
+<img src="./screenshots/4.jpg" width="260" /> <img src="./screenshots/5.jpg" width="260" /> <img src="./screenshots/6.jpg" width="260" />
 
-<img src="./screenshots/7.jpeg" width="260" />
+<img src="./screenshots/7.jpg" width="260" /> <img src="./screenshots/8.jpg" width="260" /> 
 
 ---
 
@@ -63,43 +73,65 @@ Smooth user navigation
 <p><img src="./screenshots/demo.gif" width="420" alt="Quiz Academy demo GIF"/></p>
 
 
-## 📝 How It Works
-1️⃣ User Registration
+## 🧱 Tech Stack
 
-- User creates an account → logs in → completes profile.
+📌 Frontend
+- Flutter (Material 3)
+- Dart
+- Provider / MVVM pattern
 
-2️⃣ Add Income
+📌 Backend
+- Supabase (auth, database)
 
-- User enters income amount → saved → total balance increases.
+📌 Third-Party APIs
+- TMDB API (movie data)
+- Stripe (checkout)
 
-3️⃣ Add Expense
-
-- User selects a category → enters amount → saved → total balance decreases.
-
-4️⃣ View History
-
-- Expenses appear grouped by date.
-
-5️⃣ Charts
-
-- Expenses visualized by category and by day.
+📌 Storage
+- Local cache for favorites & searches
 
 ---
 
 ## 🚀 Getting Started
 
+### Prerequisites
+- Flutter **3.x** and Dart **3.x**
+- A Supabase project (obtain **SUPABASE_URL** and **SUPABASE_ANON_KEY**)
+- A TMDB API key (get it from https://www.themoviedb.org/settings/api)
+- A Stripe account (for test **STRIPE_PUBLISHABLE_KEY**)
+
+
 ### Setup
 
 ```bash
 # 1) Clone
-git clone https://github.com/amhimel/expense-tracker.git
-cd expense-tracker
-...
+git clone https://github.com/<your-org>/<your-repo>.git
+cd <your-repo>
 
 # 2) Install packages
 flutter pub get
-flutter run
 ```
+
+Create your env/config (choose the style you prefer):
+
+**Option A — Dart constants**
+```dart
+// lib/core/env.dart
+class Env {
+  static const tmdbApiKey = "YOUR_TMDB_KEY";
+  static const supabaseUrl = "YOUR_SUPABASE_URL";
+  static const supabaseAnonKey = "YOUR_SUPABASE_ANON_KEY";
+  static const stripePublishableKey = "YOUR_STRIPE_KEY";
+}
+```
+
+**Option B — .env (with flutter_dotenv)**
+```
+SUPABASE_URL=https://YOUR-PROJECT.supabase.co
+SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+```
+
+Then initialize Supabase early (e.g., in `main.dart`).
 
 ### Run
 ```bash
@@ -113,14 +145,14 @@ flutter run
 
 ```
 lib/
- ├── Chart/          
- ├── Model/            
- ├── Provider/           
- ├── Screen/        
- ├── services/        
- ├── Widget/     
- ├── app.dart        
- └── main.dart       
+ ├── common/          # Shared widgets, buttons, cards
+ ├── core/            # Constants, helpers, theme
+ ├── data/            # API services, repositories
+ ├── features/        # Modules: home, details, search, favorites, booking
+ ├── services/        # Stripe, Supabase, TMDB clients
+ ├── view_model/      # Providers
+ ├── app.dart         # Routes, theme
+ └── main.dart        # Entry point
 
 
 ```
@@ -134,7 +166,7 @@ lib/
 - Watchlist & history
 - Push notifications
 - Full trailer playback
-
+- Real Stripe backend (Cloud Functions)
 
 ---
 
@@ -147,4 +179,4 @@ If you spot UI/UX tweaks, accessibility fixes, or performance improvements, plea
 
 ## 📝 License
 
-MIT © 2025-12-04 — Expense Tracker Contributors
+MIT © 2025-12-04 — Movie Verse Contributors
