@@ -42,12 +42,8 @@ Engage your users with quick, shareable quizzes, real‑time leaderboards, and a
 ---
 
 ## 🎥 Demo
-<p><img src="./assets/demo.gif" width="420" alt="Quiz Academy demo GIF"/></p>
+<p><img src="./screenshots/demo.gif" width="420" alt="Quiz Academy demo GIF"/></p>
 
-
-<video src="./assets/demo.mp4" controls muted playsinline width="420"></video>
-
-> If the player doesn’t render on some GitHub clients, you can **[download the video here](./assets/demo.mp4)**.
 
 ## 🧱 Tech Stack
 
