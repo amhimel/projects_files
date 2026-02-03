@@ -40,18 +40,18 @@ This project focuses on clean UI design, **API integration,** and scalable Flutt
 > Place the `screenshots/` folder in your repo root so these links work on GitHub.
 
 <p align="center">
-  <img src="Assets/files/screenshots/main.jpg" style="width:100%; max-width:100%;" alt="News App Main Screen"/>
+  <img src="./screenshots/main.jpg" style="width:100%; max-width:100%;" alt="News App Main Screen"/>
 </p>
 
-<img src="Assets/files/screenshots/1.jpeg" width="260"  alt=""/> <img src="Assets/files/screenshots/2.jpeg" width="260" /> <img src="Assets/files/screenshots/3.jpeg" width="260" />
+<img src="./screenshots/1.jpeg" width="260"  alt=""/> <img src="./screenshots/2.jpeg" width="260" /> <img src="./screenshots/3.jpeg" width="260" />
 
-<img src="Assets/files/screenshots/4.jpeg" width="260" /> <img src="Assets/files/screenshots/5.jpeg" width="260" /> <img src="Assets/files/screenshots/6.jpeg" width="260" />
+<img src="./screenshots/4.jpeg" width="260" /> <img src="./screenshots/5.jpeg" width="260" /> <img src="./screenshots/6.jpeg" width="260" />
 
 ---
 
 ## 🎥 Demo
 
-<p><img src="Assets/files/screenshots/demo.gif" width="420" alt="News App demo GIF"/></p>
+<p><img src="./screenshots/demo.gif" width="420" alt="News App demo GIF"/></p>
 
 ## 🧱 Tech Stack
 
